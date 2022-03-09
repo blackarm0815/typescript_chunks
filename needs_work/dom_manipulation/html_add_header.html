@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<style></style>
+	</head>
+	<body>
+		<pre id="output"></pre>
+		<script>
+			function addHeader(headerText){
+				var outputDiv = document.getElementById("output");
+				var header = document.createElement('h1');
+				var text = document.createTextNode(headerText);
+				header.appendChild(text);
+				outputDiv.appendChild(header);
+			}
+			addHeader("hello world.");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<style></style>
+	</head>
+	<body>
+		<pre id="output"></pre>
+		<script>
+			function addText(pretty){
+				var preformatted = document.getElementById("output");
+				var textNode = document.createTextNode(pretty);
+				var linebreak = document.createElement("br");
+				preformatted.innerHTML = "";
+				preformatted.appendChild(textNode);
+				preformatted.appendChild(linebreak);
+			}
+			var data = [{"key":"value"},{"foo":"blah"}];
+			var pretty = JSON.stringify(data, null, 2);
+			addText(pretty);
+		</script>
+	</body>
+</html>

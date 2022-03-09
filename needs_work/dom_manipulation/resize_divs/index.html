@@ -1,0 +1,32 @@
+<html>
+  <head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<style>
+			#top {
+				background-color: rgb(212, 220, 255);
+			}
+			#main {
+				background-color: rgb(193, 250, 196);
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id = 'top'>
+			<span style="display: inline-block">
+				top - the height of this div is calculated by css.
+			</span>
+			<span style="display: inline-block">
+				when the page width is decreased the text scrolls onto the next line.
+			</span>
+			<span style="display: inline-block">
+				it's width is calculated by code.
+			</span>
+		</div>
+		<div id = 'main'>
+			<p>main - this is an absolute div. it's top is always aligned with the bottom of the div above. it has the same left. width and height are calculated</p>
+		</div>
+		<script src = 'resize_divs.js'></script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<style></style>
+	</head>
+	<body>
+		<div id = "textbox"></div>
+		<script>
+			// create a preformatted text element
+			var pre = document.createElement("PRE");
+			document.getElementById("textbox").appendChild(pre);
+			// create a text element
+			var text = document.createTextNode("hello world\n\n");
+			// add to the pre element
+			pre.appendChild(text);
+			// try selecting the pre element directly
+			var direct = document.querySelector('#textbox > pre');
+			// create a new text element
+			text = document.createTextNode("hello again\n\n");
+			// add to the pre element
+			direct.appendChild(text);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<style></style>
+	</head>
+	<body>
+		<div id="data"></div>
+		<script>
+
+			var ghost = document.getElementById("data");
+			var select = document.createElement("select");
+			var optionList = [];
+			var optionElement;
+			ghost.appendChild(select)
+			optionList.push(['Choose an option','slotAvailability',true,true]);
+			optionList.push(['Power - Maximum','powerMaximum',false,false]);
+			optionList.push(['Power - Average','powerAverage',false,false]);
+			optionList.forEach(function(option){
+			optionElement = document.createElement('option');
+			optionElement.text = option[0];
+			optionElement.value = option[1];
+			optionElement.disabled = option[2];
+			optionElement.selected = option[3];
+			select.appendChild(optionElement);
+			});
+		</script>
+	</body>
+</html>
+

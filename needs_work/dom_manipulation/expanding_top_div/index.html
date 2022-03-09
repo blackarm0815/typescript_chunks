@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <style>
+      .topDefault {
+        background-color: rgb(230, 230, 230);
+      }
+      .topVisible {
+        background-color: rgb(255, 125, 125);
+      }
+      .mainDefault {
+        background-color: rgb(255, 255, 255);
+      }
+      .mainVisible {
+        background-color: rgb(133, 182, 252);
+      }
+      #topBackground {
+        position: absolute;
+      }
+      #topForeground {
+        position: absolute;
+      }
+      #main {
+        position: absolute;
+        
+      }
+      h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      a:hover {
+        color: blue;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id = 'topBackground' class = 'topDefault'></div>
+    <div id = 'topForeground' class = 'topDefault'>
+      <h1>This inner div will resize as the page resizes and the other two divs will resize to match</h1>
+    </div>
+    <div id = 'main' class = 'mainDefault'>
+      Show divs
+      <input id = 'showDivs' type = 'checkbox'>
+      <br/>
+      <a href = 'https://github.com/blackarmVR/typescript_examples/tree/main/dom_manipulation/expanding_top_div' target = '_blank'>Source</a>
+    </div>
+    <script src = 'expanding_top_div.js'></script>
+  </body>
+</html>
