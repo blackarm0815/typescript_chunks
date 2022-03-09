@@ -1,10 +1,13 @@
 
-const deleteChildById = (targetId: string) => {
-  const myNode: HTMLElement | null = document.getElementById(targetId);
+const deleteChildById = () => {
+  const myNode: HTMLElement | null = document.getElementById('foo');
   if (myNode !== null) {
     while (myNode.firstChild) {
       myNode.removeChild(myNode.firstChild);
     }
   }
 };
-deleteChildById('foo');
+let doStuffButton: HTMLButtonElement | null = <HTMLButtonElement>document.getElementById('doStuff');
+if (doStuffButton !== null) {
+  doStuffButton.addEventListener('click', deleteChildById);
+}

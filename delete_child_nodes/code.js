@@ -1,10 +1,13 @@
 "use strict";
-var deleteChildById = function (targetId) {
-    var myNode = document.getElementById(targetId);
+var deleteChildById = function () {
+    var myNode = document.getElementById('foo');
     if (myNode !== null) {
         while (myNode.firstChild) {
             myNode.removeChild(myNode.firstChild);
         }
     }
 };
-deleteChildById('foo');
+var doStuffButton = document.getElementById('doStuff');
+if (doStuffButton !== null) {
+    doStuffButton.addEventListener('click', deleteChildById);
+}
