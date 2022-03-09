@@ -52,14 +52,6 @@ const pageResizeDivs = () => {
       }
     });
 };
-const setTriggers = () => {
-  let toggle: HTMLElement | null = null;
-  toggle = document.getElementById('showDivs');
-  if (toggle !== null) {
-    toggle.addEventListener('change', recolorDivs);
-  }
-  window.addEventListener('resize', pageResizeDivs);
-};
 const recolorDivs = () => {
   let toggle: HTMLInputElement | null = null;
   let divElement: HTMLElement | null = null;
@@ -85,6 +77,14 @@ const recolorDivs = () => {
       }
     }
   }
+};
+const setTriggers = () => {
+  let toggle: HTMLElement | null = null;
+  toggle = document.getElementById('showDivs');
+  if (toggle !== null) {
+    toggle.addEventListener('change', recolorDivs);
+  }
+  window.addEventListener('resize', pageResizeDivs);
 };
 recolorDivs();
 setTriggers();

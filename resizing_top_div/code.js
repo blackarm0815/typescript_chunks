@@ -53,14 +53,6 @@ var pageResizeDivs = function () {
         }
     });
 };
-var setTriggers = function () {
-    var toggle = null;
-    toggle = document.getElementById('showDivs');
-    if (toggle !== null) {
-        toggle.addEventListener('change', recolorDivs);
-    }
-    window.addEventListener('resize', pageResizeDivs);
-};
 var recolorDivs = function () {
     var toggle = null;
     var divElement = null;
@@ -87,6 +79,14 @@ var recolorDivs = function () {
             }
         }
     }
+};
+var setTriggers = function () {
+    var toggle = null;
+    toggle = document.getElementById('showDivs');
+    if (toggle !== null) {
+        toggle.addEventListener('change', recolorDivs);
+    }
+    window.addEventListener('resize', pageResizeDivs);
 };
 recolorDivs();
 setTriggers();
