@@ -22,4 +22,9 @@ var people = [
     },
 ];
 var average = people.reduce(function (total, next) { return total + next.age; }, 0) / people.length;
-console.log(average);
+var preElement = document.getElementById('output');
+if (preElement !== null) {
+    preElement.innerText = JSON.stringify(people, null, 2);
+    preElement.innerText += '\n\n';
+    preElement.innerText += "average = " + average.toString();
+}

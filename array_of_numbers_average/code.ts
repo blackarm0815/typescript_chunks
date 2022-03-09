@@ -27,4 +27,10 @@ const people: Array<Person> = [
   },
 ];
 const average: number = people.reduce((total, next) => total + next.age, 0) / people.length;
-console.log(average);
+const preElement: HTMLElement | null = document.getElementById('output');
+if (preElement !== null) {
+  preElement.innerText = JSON.stringify(people, null, 2);
+  preElement.innerText += '\n\n';
+  preElement.innerText += `average = ${average.toString()}`;
+
+}
