@@ -1,8 +1,7 @@
 "use strict";
 var clickUseData = function (message) {
     // uses the extracted data
-    var outputPre;
-    outputPre = document.getElementById('output');
+    var outputPre = document.getElementById('output');
     if (outputPre !== null) {
         outputPre.innerText = message;
     }
@@ -24,8 +23,7 @@ var clickReaction = function (mouseEvent) {
 };
 var clickAddFunctionality = function (elementId, message) {
     // adds data and functionality to element
-    var htmlElement;
-    htmlElement = document.getElementById(elementId);
+    var htmlElement = document.getElementById(elementId);
     if (htmlElement) {
         htmlElement.style.cursor = 'pointer';
         htmlElement.dataset.message = message;
