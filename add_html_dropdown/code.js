@@ -1,25 +1,28 @@
-"use strict";
-var doStuff = function () {
+var createDropdown = function () {
     var outputDiv = document.getElementById('output');
     if (outputDiv !== null) {
         var select = document.createElement('select');
-        var optionList = [];
-        var optionElement;
+        select.id = 'dropdown';
         outputDiv.appendChild(select);
-        optionList.push(['Choose an option', 'slotAvailability', true, true]);
-        optionList.push(['Power - Maximum', 'powerMaximum', false, false]);
-        optionList.push(['Power - Average', 'powerAverage', false, false]);
-        optionList.forEach(function (option) {
-            optionElement = document.createElement('option');
-            optionElement.text = option[0];
-            optionElement.value = option[1];
-            optionElement.disabled = option[2];
-            optionElement.selected = option[3];
-            select.appendChild(optionElement);
+    }
+};
+var fillDropdown = function () {
+    var testData = ['alpha', 'bravo', 'charlie'];
+    var dropDownElement = document.getElementById('dropdown');
+    if (dropDownElement !== null) {
+        testData.forEach(function (option) {
+            var optionElement = document.createElement('option');
+            optionElement.text = option;
+            optionElement.value = "".concat(option, "_value");
+            dropDownElement.appendChild(optionElement);
         });
     }
 };
+var addDropdown = function () {
+    createDropdown();
+    fillDropdown();
+};
 var doStuffButton = document.getElementById('doStuff');
 if (doStuffButton !== null) {
-    doStuffButton.addEventListener('click', doStuff);
+    doStuffButton.addEventListener('click', addDropdown);
 }

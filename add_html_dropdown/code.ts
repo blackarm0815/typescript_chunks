@@ -1,25 +1,28 @@
-
-const doStuff = () => {
-  let outputDiv: HTMLElement | null = document.getElementById('output');
+const createDropdown = () => {
+  const outputDiv: HTMLElement | null = document.getElementById('output');
   if (outputDiv !== null) {
-    var select: HTMLSelectElement = document.createElement('select');
-    var optionList: Array<Array<any>> = [];
-    var optionElement: HTMLOptionElement;
+    const select: HTMLSelectElement = document.createElement('select');
+    select.id = 'dropdown';
     outputDiv.appendChild(select);
-    optionList.push(['Choose an option', 'slotAvailability', true, true]);
-    optionList.push(['Power - Maximum', 'powerMaximum', false, false]);
-    optionList.push(['Power - Average', 'powerAverage', false, false]);
-    optionList.forEach(function (option){
-      optionElement = document.createElement('option');
-      optionElement.text = option[0];
-      optionElement.value = option[1];
-      optionElement.disabled = option[2];
-      optionElement.selected = option[3];
-      select.appendChild(optionElement);
+  }
+};
+const fillDropdown = () => {
+  const testData: Array<string> = ['alpha', 'bravo', 'charlie'];
+  const dropDownElement: HTMLElement | null = document.getElementById('dropdown');
+  if (dropDownElement !== null) {
+    testData.forEach((option) => {
+      const optionElement = document.createElement('option');
+      optionElement.text = option;
+      optionElement.value = `${option}_value`;
+      dropDownElement.appendChild(optionElement);
     });
   }
 };
-let doStuffButton: HTMLButtonElement | null = <HTMLButtonElement>document.getElementById('doStuff');
+const addDropdown = () => {
+  createDropdown();
+  fillDropdown();
+};
+const doStuffButton: HTMLButtonElement | null = <HTMLButtonElement>document.getElementById('doStuff');
 if (doStuffButton !== null) {
-  doStuffButton.addEventListener('click', doStuff);
+  doStuffButton.addEventListener('click', addDropdown);
 }
