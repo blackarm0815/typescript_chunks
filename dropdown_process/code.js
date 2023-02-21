@@ -1,21 +1,17 @@
 "use strict";
 var processDropdown = function () {
-    var dropDown;
-    var dropdownData;
-    var output;
-    output = document.getElementById('output');
-    if (output !== null) {
-        dropDown = document.getElementById('cars');
-        dropdownData = Array.prototype.slice.call(dropDown.options);
-        output.innerHTML = '';
-        for (var _i = 0, dropdownData_1 = dropdownData; _i < dropdownData_1.length; _i++) {
-            var option = dropdownData_1[_i];
-            output.innerHTML += 'text - ' + option.text + '<br>';
-            output.innerHTML += 'value - ' + option.value + '<br>';
-            output.innerHTML += 'disabled - ' + option.disabled + '<br>';
-            output.innerHTML += 'selected - ' + option.selected + '<br>';
-            output.innerHTML += '<br>';
-        }
+    var outputDiv = document.getElementById('outputDiv');
+    if (outputDiv !== null) {
+        outputDiv.innerHTML = '';
+        var dropDown_1 = document.getElementById('cars');
+        var dropdownData = Array.prototype.slice.call(dropDown_1.options);
+        dropdownData.forEach(function (option) {
+            outputDiv.innerHTML += 'text - ' + option.text + '<br>';
+            outputDiv.innerHTML += 'value - ' + option.value + '<br>';
+            outputDiv.innerHTML += 'disabled - ' + option.disabled + '<br>';
+            outputDiv.innerHTML += 'selected - ' + option.selected + '<br>';
+            outputDiv.innerHTML += '<br>';
+        });
     }
 };
 var dropDown = document.getElementById('cars');
