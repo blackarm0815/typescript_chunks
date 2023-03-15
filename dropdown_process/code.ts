@@ -1,19 +1,29 @@
 const processDropdown = () => {
-  let outputDiv = <HTMLElement>document.getElementById('outputDiv');
+  const outputDiv = <HTMLElement>document.getElementById('outputDiv');
+  let divInner = '';
   if (outputDiv !== null) {
-    outputDiv.innerHTML = '';
     const dropDown = <HTMLSelectElement>document.getElementById('cars');
     const dropdownData = Array.prototype.slice.call(dropDown.options);
     dropdownData.forEach((option) => {
-      outputDiv.innerHTML += 'text - ' + option.text + '<br>';
-      outputDiv.innerHTML += 'value - ' + option.value + '<br>';
-      outputDiv.innerHTML += 'disabled - ' + option.disabled + '<br>';
-      outputDiv.innerHTML += 'selected - ' + option.selected + '<br>';
-      outputDiv.innerHTML += '<br>';
+      const temp = <HTMLOptionElement>option;
+      divInner += `text - ${temp.text}<br>`;
+      divInner += `value - ${temp.value}<br>`;
+      if (temp.disabled) {
+        divInner += 'disabled - true<br>';
+      } else {
+        divInner += 'disabled - false<br>';
+      }
+      if (temp.selected) {
+        divInner += 'selected - true<br>';
+      } else {
+        divInner += 'selected - false<br>';
+      }
+      divInner += '<br>';
     });
+    outputDiv.innerHTML = divInner;
   }
 };
-let dropDown: HTMLSelectElement | null = <HTMLSelectElement>document.getElementById('cars');
+const dropDown: HTMLSelectElement | null = <HTMLSelectElement>document.getElementById('cars');
 if (dropDown !== null) {
   dropDown.addEventListener('change', processDropdown);
 }

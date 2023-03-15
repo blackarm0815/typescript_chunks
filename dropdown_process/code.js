@@ -1,17 +1,29 @@
 "use strict";
 var processDropdown = function () {
     var outputDiv = document.getElementById('outputDiv');
+    var divInner = '';
     if (outputDiv !== null) {
-        outputDiv.innerHTML = '';
         var dropDown_1 = document.getElementById('cars');
         var dropdownData = Array.prototype.slice.call(dropDown_1.options);
         dropdownData.forEach(function (option) {
-            outputDiv.innerHTML += 'text - ' + option.text + '<br>';
-            outputDiv.innerHTML += 'value - ' + option.value + '<br>';
-            outputDiv.innerHTML += 'disabled - ' + option.disabled + '<br>';
-            outputDiv.innerHTML += 'selected - ' + option.selected + '<br>';
-            outputDiv.innerHTML += '<br>';
+            var temp = option;
+            divInner += "text - ".concat(temp.text, "<br>");
+            divInner += "value - ".concat(temp.value, "<br>");
+            if (temp.disabled) {
+                divInner += 'disabled - true<br>';
+            }
+            else {
+                divInner += 'disabled - false<br>';
+            }
+            if (temp.selected) {
+                divInner += 'selected - true<br>';
+            }
+            else {
+                divInner += 'selected - false<br>';
+            }
+            divInner += '<br>';
         });
+        outputDiv.innerHTML = divInner;
     }
 };
 var dropDown = document.getElementById('cars');
