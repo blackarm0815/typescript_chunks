@@ -1,4 +1,3 @@
-
 const deleteChildById = () => {
   const myNode: HTMLElement | null = document.getElementById('foo');
   if (myNode !== null) {
@@ -7,7 +6,7 @@ const deleteChildById = () => {
     }
   }
 };
-let doStuffButton: HTMLButtonElement | null = <HTMLButtonElement>document.getElementById('doStuff');
+const doStuffButton = <HTMLButtonElement>document.getElementById('doStuff');
 if (doStuffButton !== null) {
   doStuffButton.addEventListener('click', deleteChildById);
 }
