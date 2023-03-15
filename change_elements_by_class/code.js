@@ -1,9 +1,11 @@
 "use strict";
 var changeByClass = function () {
-    var elementArray = [];
-    elementArray = Array.prototype.slice.call(document.getElementsByClassName('change'));
+    var elementArray = Array.prototype.slice.call(document.getElementsByClassName('change'));
     elementArray.forEach(function (changeElement) {
-        changeElement.style.fontSize = '50px';
+        var temp = changeElement;
+        if (temp !== null) {
+            temp.style.fontSize = '50px';
+        }
     });
 };
 var doStuffButton = document.getElementById('doStuff');

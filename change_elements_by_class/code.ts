@@ -1,11 +1,13 @@
 const changeByClass = () => {
-  let elementArray: Array<HTMLElement> = [];
-  elementArray = Array.prototype.slice.call(document.getElementsByClassName('change'));
+  const elementArray = Array.prototype.slice.call(document.getElementsByClassName('change'));
   elementArray.forEach((changeElement) => {
-    changeElement.style.fontSize = '50px';
+    const temp = <HTMLParagraphElement>changeElement;
+    if (temp !== null) {
+      temp.style.fontSize = '50px';
+    }
   });
 };
-let doStuffButton: HTMLButtonElement | null = <HTMLButtonElement>document.getElementById('doStuff');
+const doStuffButton = <HTMLButtonElement>document.getElementById('doStuff');
 if (doStuffButton !== null) {
   doStuffButton.addEventListener('click', changeByClass);
 }

@@ -1,3 +1,4 @@
+"use strict";
 var createDropdown = function () {
     var outputDiv = document.getElementById('output');
     if (outputDiv !== null) {

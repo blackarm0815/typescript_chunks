@@ -1,16 +1,15 @@
 const makeDivs = () => {
-  let boxHeight: number = 30;
-  let boxWidth: number = 100;
-  let countHorizontal: number = 5;
-  let countVertical: number = 4;
-  let divHeight: number = 0;
+  const boxHeight = 30;
+  const boxWidth = 100;
+  const countHorizontal = 5;
+  const countVertical = 4;
+  let divHeight = 0;
   let divInner: HTMLElement;
-  let divLeft: number = 0;
-  let divMain: HTMLElement | null;
+  let divLeft = 0;
   let divOuter: HTMLElement;
-  let divTop: number = 0;
-  let divWidth: number = 0;
-  divMain = document.getElementById('main');
+  let divTop = 0;
+  let divWidth = 0;
+  const divMain = document.getElementById('main');
   if (divMain !== null) {
     for (let countOuter = 0; countOuter < 20; countOuter += 1) {
       divOuter = document.createElement('div');
@@ -20,8 +19,8 @@ const makeDivs = () => {
       divOuter.style.width = `${divWidth}px`;
       divOuter.style.height = `${divHeight}px`;
       divMain.appendChild(divOuter);
-      for (var x = 0; x < countHorizontal; x += 1 ) {
-        for (var y = 0; y < countVertical; y += 1 ) {
+      for (let x = 0; x < countHorizontal; x += 1) {
+        for (let y = 0; y < countVertical; y += 1) {
           divLeft = (x * (boxWidth + 1)) + 1;
           divTop = (y * (boxHeight + 1)) + 1;
           divInner = document.createElement('div');

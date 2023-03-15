@@ -26,5 +26,5 @@ var preElement = document.getElementById('output');
 if (preElement !== null) {
     preElement.innerText = JSON.stringify(people, null, 2);
     preElement.innerText += '\n\n';
-    preElement.innerText += "average = " + average.toString();
+    preElement.innerText += "average = ".concat(average.toString());
 }
