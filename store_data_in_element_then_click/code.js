@@ -8,9 +8,8 @@ var clickUseData = function (message) {
 };
 var clickReaction = function (mouseEvent) {
     // when the element is clicked extract the data and pass it to another function
-    var selectedElement;
     var message;
-    selectedElement = document.elementFromPoint(mouseEvent.x, mouseEvent.y);
+    var selectedElement = document.elementFromPoint(mouseEvent.x, mouseEvent.y);
     if (selectedElement !== null) {
         message = selectedElement.dataset.message;
         if (message !== undefined) {

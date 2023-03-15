@@ -8,12 +8,11 @@ const clickUseData = (
   }
 };
 const clickReaction = (
-  mouseEvent: any,
+  mouseEvent: MouseEvent,
 ) => {
   // when the element is clicked extract the data and pass it to another function
-  let selectedElement: HTMLElement | undefined;
   let message: string | undefined;
-  selectedElement = <HTMLElement>document.elementFromPoint(mouseEvent.x, mouseEvent.y);
+  const selectedElement = <HTMLElement>document.elementFromPoint(mouseEvent.x, mouseEvent.y);
   if (selectedElement !== null) {
     message = selectedElement.dataset.message;
     if (message !== undefined) {

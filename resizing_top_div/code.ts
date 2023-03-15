@@ -1,13 +1,13 @@
 const pageResizeDivs = () => {
   let divElement: HTMLElement | null;
-  let divHeight: number = 0;
-  let divLeft: number = 0;
-  let divTop: number = 0;
-  let divWidth: number = 0;
-  let topBorder: number = 10;
-  let topForegroundBottom: number = 0;
-  let rightMargin: number = 5;
-  let bottomMargine: number = 5;
+  let divHeight = 0;
+  let divLeft = 0;
+  let divTop = 0;
+  let divWidth = 0;
+  const topBorder = 10;
+  let topForegroundBottom = 0;
+  const rightMargin = 5;
+  const bottomMargine = 5;
   Promise.resolve()
     .then(() => {
       // resize the top div to fit the width of the page
