@@ -1,9 +1,7 @@
 "use strict";
-var output;
-var button;
-output = document.getElementById('output');
+var output = document.getElementById('output');
 if (output !== null) {
-    button = document.createElement('input');
+    var button = document.createElement('input');
     button.setAttribute('type', 'button');
     button.setAttribute('value', 'Click me');
     button.setAttribute('name', 'buttonId');
