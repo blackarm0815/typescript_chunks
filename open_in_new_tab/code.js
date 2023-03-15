@@ -1,12 +1,13 @@
 "use strict";
 var openLink = function (mouseEvent) {
-    var elem;
     var search;
     var url = 'https://duckduckgo.com/?t=chromentp&iax=images&ia=images&q=';
-    elem = document.elementFromPoint(mouseEvent.x, mouseEvent.y);
-    search = elem.dataset.search;
-    if (search !== undefined) {
-        window.open("" + url + search);
+    var elem = document.elementFromPoint(mouseEvent.x, mouseEvent.y);
+    if (elem !== null) {
+        search = elem.dataset.search;
+        if (search !== undefined) {
+            window.open("".concat(url).concat(search));
+        }
     }
 };
 var addOpenLink = function (elementId, search) {
