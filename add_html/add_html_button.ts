@@ -5,7 +5,4 @@ if (output !== null) {
   button.setAttribute('value', 'Click me');
   button.setAttribute('name', 'buttonId');
   output.appendChild(button);
-  button.addEventListener('click', () => {
-    console.log('click');
-  }, false);
 }
