@@ -2,7 +2,7 @@
 const spectrumGreenRed = (numerator: number, denominator: number) => {
   const decimal = numerator / denominator;
   if (denominator === 0) {
-    return 'spectrumZero';
+    return 'invalid_denominator_was_zero';
   }
   if (decimal < 0.1) {
     return 'spectrumA';
